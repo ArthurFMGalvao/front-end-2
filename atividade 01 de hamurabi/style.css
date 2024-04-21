@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.input-group {
+    margin-bottom: 1em;
+}
+
+.input-field {
+    margin-left: 0.5em;
+}
+
+.calculate-button {
+    display: block;
+    margin-top: 1em;
+    padding: 0.5em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.calculate-button:hover {
+    background-color: #45a049;
+}
+
+.result-field {
+    margin-top: 2em;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
