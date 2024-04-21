@@ -1,0 +1,117 @@
+APP.JS:
+
+function calcularIMC() {
+    let peso = document.getElementById('peso').value;
+    let altura = document.getElementById('altura').value;
+
+    if (peso === '' || altura === '') {
+        alert('Por favor, preencha os campos de peso e altura.');
+        return;
+    }
+
+    let imc = peso / (altura * altura);
+    let diagnostico = '';
+    let cor = '';
+
+    if (imc < 18.5) {
+        diagnostico = 'Abaixo do peso';
+        cor = '#9C27B0';
+    } else if (imc <= 24.9) {
+        diagnostico = 'Peso normal';
+        cor = '#4CAF50';
+    } else if (imc <= 29.9) {
+        diagnostico = 'Sobrepeso';
+        cor = '#FFC107';
+    } else if (imc <= 34.9) {
+        diagnostico = 'Obesidade grau 1';
+        cor = '#FF9800';
+    } else if (imc <= 39.9) {
+        diagnostico = 'Obesidade grau 2';
+        cor = '#FF5722';
+    } else {
+        diagnostico = 'Obesidade grau 3';
+        cor = '#795548';
+    }
+
+    let resultado = document.getElementById('resultado');
+    resultado.innerText = `IMC: ${imc.toFixed(2)}, Diagnóstico: ${diagnostico}`;
+    resultado.style.backgroundColor = cor;
+}
+
+
+
+INDEX.HTML: 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Calculadora de IMC</h1>
+
+    <div class="input-group">
+        <label for="peso">Peso (em kg):</label>
+        <input type="number" id="peso" name="peso" class="input-field">
+    </div>
+
+    <div class="input-group">
+        <label for="altura">Altura (em metros):</label>
+        <input type="number" id="altura" name="altura" step="0.01" class="input-field">
+    </div>
+
+    <button onclick="calcularIMC()" class="calculate-button">Calcular IMC</button>
+
+    <div id="resultado" class="result-field"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+STYLE.CSS:
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.input-group {
+    margin-bottom: 1em;
+}
+
+.input-field {
+    margin-left: 0.5em;
+}
+
+.calculate-button {
+    display: block;
+    margin-top: 1em;
+    padding: 0.5em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.calculate-button:hover {
+    background-color: #45a049;
+}
+
+.result-field {
+    margin-top: 2em;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+
+
+Observação: professor boa noite, ocorreu um erro na minha página escrito "page not found" por isso tive que mandar em documentação. o código está funcionando perfeitamente no meu pc, caso dê erro, amanhã na aula testarei no pc da escola.
+
+
+
+
+
+
